@@ -9,7 +9,7 @@ import type { ClassId } from "src/models/character-class";
 import styles from "../app.module.css";
 
 
-const Home: React.FC = () => {
+function Home() {
   const [highlightedClass, setHighlightedClass] = useState<ClassId>();
   const navigate = useNavigate();
 
