@@ -9,9 +9,9 @@ const root = document.getElementById("root");
 if (root) {
   createRoot(root).render(
     <StrictMode>
-      <BrowserRouter> /*Se agrega el BrowserRouter*/
+      <BrowserRouter> 
       <App />
-      </BrowserRouter> /* Que envuelve el aplicativo*/
+      </BrowserRouter>
     </StrictMode>
   );
 }
