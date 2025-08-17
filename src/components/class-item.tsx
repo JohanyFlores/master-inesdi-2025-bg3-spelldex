@@ -30,7 +30,7 @@ type Props = {
   highlight: (c: ClassId | undefined) => void;
 } & React.ComponentProps<"button">;
 
-export function ClassGridItem({
+export function ClassItem({
   name,
   classId,
   selected,

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"; /*se agrega para la navegación*
 
 import type { ClassId } from "src/models/character-class";
 
-import styles from "./app.module.css";
+import styles from "../app.module.css";
 
 
 const Home: React.FC = () => {
@@ -18,7 +18,7 @@ const handleClassClick = (classId: ClassId) => {
 }
 
   return (
-    <main className={styles.main} onKeyDown={onKeyDown}>
+    <main className={styles.main}>
       <SpellDiagram
         highlightedClass={highlightedClass}
       />

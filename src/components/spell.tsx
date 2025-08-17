@@ -65,7 +65,7 @@ export function Spell({
       data-spell-id={spell.id}
       style={animatedSpellStyles}
       aria-label={spell.name}
-      aria-detailed={detailed ? "true" : "false"}
+      aria-details={spell.name} // <-- CORREGIDO
       {...(detailed ? { onClick } : {})}
     >
       {detailed && showImage && (
