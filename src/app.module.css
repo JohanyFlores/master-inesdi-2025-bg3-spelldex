@@ -1,65 +1,95 @@
-/* Main app container with max-width */
-main {
-  position: relative;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
-  padding: 2rem;
-}
 
-/* Media queries for responsive behavior */
-@media (max-width: 800px) {
-  main {
-    max-width: 90%;
-  }
-}
 
-@media (max-width: 768px) {
-  main {
-    padding: 1.5rem;
-    max-width: 95%;
-  }
-}
+/* Efectos Pop-up */
 
-@media (max-width: 480px) {
-  main {
-    padding: 1rem;
-    max-width: 100%;
-  }
-}
 
-/* Paper grid texture overlay */
-main::before {
-  content: "";
+
+
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      var(--bg-texture) 2px,
-      var(--bg-texture) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      var(--bg-texture) 2px,
-      var(--bg-texture) 4px
-    );
-  pointer-events: none;
-  z-index: var(--z-paper-texture);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  backdrop-filter: blur(8px); /* Efecto de desenfoque */
+  -webkit-backdrop-filter: blur(8px); /* Soporte para navegadores antiguos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-main > * {
-  position: relative;
-  z-index: 1;
+
+/* Animación de fuego */
+@keyframes fireEffect {
+  0% {
+    box-shadow: 0 0 15px rgba(231, 201, 6, 0.88), 0 0 30px rgba(255, 140, 0, 0.6), 0 0 45px rgba(255, 215, 0, 0.4);
+    transform: translateY(0) scale(1);
+    border-color: rgba(238, 215, 9, 0.944);
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(255, 208, 0, 0.8), 0 0 35px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 69, 0, 0.4);
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(255, 208, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 119, 0, 0.811), 0 0 40px rgba(255, 69, 0, 0.6), 0 0 55px rgba(255, 140, 0, 0.4);
+    transform: translateY(-4px) scale(1.05);
+    border-color: rgba(255, 89, 0, 0.8);
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(35, 192, 3, 0.92), 0 0 35px rgb(26, 195, 0), 0 0 50px rgba(255, 69, 0, 0.4);
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(33, 210, 2, 0.91);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(3, 53, 219, 0.903), 0 0 30px rgb(0, 47, 255), 0 0 45px rgba(255, 215, 0, 0.4);
+    transform: translateY(0) scale(1);
+    border-color: rgba(4, 38, 228, 0.927);
+  }
 }
 
-.main:focus {
-  outline: none;
+.popup {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1.5px solid goldenrod;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  animation:fireEffect 5s infinite alternate; /* Aplicar animación de fuego */
+}
+
+
+
+.popup h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.popup p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.closeButton {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #000000;
+  border: 1px solid goldenrod;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 3px 3px 8px #C6AC8F; 
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: var(--bg-light);
+  border-color: var(--accent, var(--gold-accent));
+  box-shadow: 0 4px 16px 0 var(--accent, var(--gold-accent));
+  outline: none; /* Remove default focus outline */
 }

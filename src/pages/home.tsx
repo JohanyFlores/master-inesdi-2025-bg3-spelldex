@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import type { ClassId } from "src/models/character-class";
 
-import styles from "../app.module.css";
+import styles from "./home.module.css";
 
 function Home() {
   const [highlightedClass, setHighlightedClass] = useState<ClassId>(); // Clase inicial

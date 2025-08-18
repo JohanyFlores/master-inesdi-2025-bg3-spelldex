@@ -7,7 +7,7 @@ import { ClassGrid } from "../components/class-grid";
 import { SpellDiagram } from "../components/spell-diagram";
 import type { ClassId } from "../models/character-class";
 import classes from "../data/classes.json"; // 1. Importa la lista de clases
-import styles from "../app.module.css";
+import styles from "./classview.module.css";
 
 type ClassViewParams = {
   className: ClassId;

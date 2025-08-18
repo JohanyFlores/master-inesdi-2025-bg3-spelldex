@@ -1,0 +1,34 @@
+.details {
+  padding: 1rem;
+  border: 1px solid var(--ink-light);
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.damage {
+  margin-top: 1rem;
+}
+
+.empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--ink-light);
+  font-style: italic;
+}

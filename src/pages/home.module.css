@@ -1,0 +1,14 @@
+/* Main app container with max-width */
+main {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 2rem;
+  }
+  
+
+  .main:focus {
+    outline: none;
+  }
