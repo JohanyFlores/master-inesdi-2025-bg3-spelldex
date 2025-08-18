@@ -18,7 +18,7 @@ function Home() {
   const handleKeyDown = (event: React.KeyboardEvent) => {
     console.log("Key pressed:", event.key); // Agrega esto para depurar
 
-    const currentIndex = classIds.indexOf(highlightedClass);
+    const currentIndex = classIds.indexOf(selectedClass || highlightedClass || classIds[0]);
     let newIndex = currentIndex;
 
     if (event.key === "ArrowRight") {
@@ -66,11 +66,14 @@ function Home() {
       autoFocus
     >
       <SpellDiagram 
+      selectedClass={selectedClass}
       highlightedClass={highlightedClass}
       background={true} />
-      <ClassGrid
+     
+      <ClassGrid 
       highlight={setHighlightedClass}
       background={false}
+      //@ts-ignore
       onClick={handleClassClick}
       highlightedClass={highlightedClass}
       selectedClass={selectedClass} // Pasa la clase seleccionada

@@ -47,12 +47,16 @@ function ClassView() {
   return (
     <main className={styles.main} onKeyDown={onKeyDown} tabIndex={-1}>
       <SpellDiagram 
+    highlightedClass={undefined}
     selectedClass={selectedClass}
     background ={false}
      />
+
       <ClassGrid
     selectedClass={selectedClass}
     background={true}
+    onClick={(c) => navigate(`/${c}`)}
+    highlight={(c) => console.log(`Highlighting class: ${c}`)}
      />
     </main>
   );

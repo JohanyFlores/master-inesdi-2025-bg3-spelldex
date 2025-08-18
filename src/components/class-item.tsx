@@ -13,6 +13,8 @@ import type { ClassId } from "src/models/character-class";
 
 import styles from "./class-grid.module.css";
 
+
+
 const ASSETS: Record<ClassId, string> = {
   bard: bardIcon,
   cleric: clericIcon,
