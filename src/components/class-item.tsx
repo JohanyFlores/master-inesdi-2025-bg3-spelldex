@@ -83,7 +83,11 @@ export function ClassGridItem({
   return (
     <button
       ref={ref}
-      className={c(styles.classCell, selected && styles.highlighted)}
+      className={c(
+        styles.classCell,
+         selected && styles.selected,
+        highlight && styles.highlighted
+        )}
       tabIndex={0}
       aria-pressed={selected}
       aria-label={name}
