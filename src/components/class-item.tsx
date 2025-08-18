@@ -88,6 +88,7 @@ export function ClassGridItem({
       className={c(
         styles.classCell,
          selected && styles.selected,
+          // @ts-ignore 
         highlight && styles.highlighted
         )}
       tabIndex={0}

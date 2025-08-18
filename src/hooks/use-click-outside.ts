@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { ClassId } from "src/models/character-class";
-import { classes } from "src/data/classes";
+import classes from "../data/classes.json";
+
 
 export const useKeyboardNav = (items: typeof classes) => {
   const [highlightedSlug, setHighlightedSlug] = useState<ClassId | undefined>();
@@ -25,9 +26,7 @@ export const useKeyboardNav = (items: typeof classes) => {
 
     event.preventDefault();
     const nextItem = items[nextIndex];
-    if (nextItem) {
-      setHighlightedSlug(nextItem.slug);
-    }
+    if (nextItem) {}
   };
 
   return { highlightedSlug, setHighlightedSlug, onKeyDown };
