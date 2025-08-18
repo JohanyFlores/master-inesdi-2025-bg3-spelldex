@@ -16,7 +16,7 @@ function Home() {
   const classIds: ClassId[] = ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"]; // Lista de clases
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    console.log("Key pressed:", event.key); // Agrega esto para depurar
+    console.log("Key pressed:", event.key);
 
     const currentIndex = classIds.indexOf(selectedClass || highlightedClass || classIds[0]);
     let newIndex = currentIndex;

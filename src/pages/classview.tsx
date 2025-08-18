@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ClassGrid } from "../components/class-grid";
 import { SpellDiagram } from "../components/spell-diagram";
 import type { ClassId } from "../models/character-class";
-import classes from "../data/classes.json"; // 1. Importa la lista de clases
+import classes from "../data/classes.json"; 
 import styles from "./classview.module.css";
 
 type ClassViewParams = {
@@ -18,7 +18,7 @@ function ClassView() {
   const navigate = useNavigate();
 
   const onKeyDown = (event: React.KeyboardEvent) => {
-    // 2. Encuentra el índice de la clase actual
+    // Encuentra el índice de la clase actual
     const currentIndex = classes.findIndex(c => c.slug === selectedClass);
     let nextIndex = currentIndex;
 
@@ -28,12 +28,11 @@ function ClassView() {
       return;
     }
     
-    // 3. Lógica para las flechas del teclado
+    //Lógica para las flechas del teclado
     if (event.key === "ArrowRight") {
       // Usamos el operador de módulo (%) para volver al inicio si llegamos al final
       nextIndex = (currentIndex + 1) % classes.length;
     } else if (event.key === "ArrowLeft") {
-      // Sumamos la longitud del array para asegurar un resultado positivo
       nextIndex = (currentIndex - 1 + classes.length) % classes.length;
     } else {
       return; // No hagas nada si no es una tecla de flecha o escape
