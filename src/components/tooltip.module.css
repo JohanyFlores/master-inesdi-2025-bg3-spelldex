@@ -1,0 +1,94 @@
+/* src/components/tooltip.module.css */
+.tooltip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  
+  /* --- ESTILOS MEJORADOS --- */
+  transform: translate(-50%, -50%) translateY(10px); 
+   z-index: 100;
+  background-color: #f8f7f2; /* Un fondo oscuro para mejor contraste */
+  color: #f0f0f0;
+  padding: 12px 18px;
+  border-radius: 8px;
+  z-index: 100;
+  pointer-events: none;
+  width: max-content; /* Se ajusta al contenido */
+  min-width: 150px; /* Un ancho mínimo para que no sea muy pequeño */
+  box-shadow: 0 4px 16px 0 var(--accent, var(--gold-accent));
+
+  
+  /* Por defecto, está invisible */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Cuando esta clase se añade, el tooltip se hace visible */
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+/* --- ESTILOS PARA EL CONTENIDO --- */
+
+/* 1. Nombre del hechizo centrado */
+.name {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* 2. Contenedores de los iconos (flexbox para centrar) */
+.icons, .damageTypes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Espacio entre las burbujas */
+  margin-top: 8px;
+}
+
+/* 3. ¡LA MAGIA DE LAS BURBUJAS! 🫧 */
+.icons img, .damageTypes img {
+  width: 32px;
+  height: 32px;
+  padding: 5px; /* Espacio interior para que el icono respire */
+  outline: 1px solid var(--accent, var(--gold-accent));
+
+  background-color: rgba(0, 0, 0, 0.804); /* Fondo semitransparente oscuro */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  border-radius: 50%; /* Esto crea el círculo perfecto */
+  box-shadow: 0 2px 4px rgba(123, 123, 121, 0.668); /* Sombra para cada burbuja */
+  
+  box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+}
+
+/* 4. Efecto "flotante" al pasar el ratón por encima */
+.icons img:hover, .damageTypes img:hover {
+  transform: scale(1.15) translateY(-2px); /* Se agranda y eleva ligeramente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* La sombra se intensifica */
+
+}
+
+/* --- ESTILOS PARA CENTRAR TEXTO BAJO ICONO --- */
+/* Añade estas clases nuevas a tu archivo */
+
+.iconContainer {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  width: 90px; /* Un ancho fijo para evitar que se muevan */
+}
+
+.iconContainer span {
+  margin-top: 6px; /* Espacio entre el icono y el texto */
+  font-size: 0.75em; /* Tamaño de letra más pequeño */
+  color: #000000; /* Un color de texto más suave */
+  text-transform: capitalize; /* Pone la primera letra en mayúscula */
+}
+

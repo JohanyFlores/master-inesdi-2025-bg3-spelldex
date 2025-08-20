@@ -4,7 +4,8 @@ export type Spell = {
   name: string;
   icon: string;
   level: number;
-  upcast: boolean;
+  upcast?: boolean;
+  concentration?: boolean; //Nueva propiedad de la función
   action: string;
   duration: string;
   range: string;
